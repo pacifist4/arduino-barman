@@ -3,6 +3,10 @@ void cupStand () {
   for (int i = 0; i<4; i++) {
     if ((analogRead(cupPin[i]) == 1023 ) && (cups[i] == 0)) {
       plusCup(i);   
+      if (mode == 3) {
+        delay(500);
+        cupsDone[i] = 0;
+      }
      }
     if ((analogRead(cupPin[i]) == 0) && (cups[i] == 1) ) {
       minusCup(i);

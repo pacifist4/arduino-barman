@@ -1,11 +1,11 @@
 void loop() {
   joystick();
-  if (position != target)
-  {
-    servoRun(target); 
-    displayInfo();   
-  }
   cupStand();
+  if ( mode == 3 ) {
+    autoMode();
+  }
+  //TODO Romove display info from here
   displayInfo();
   delay(50);
+
 }
